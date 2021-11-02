@@ -1,7 +1,11 @@
+@font-face {
+    font-family: "Exodus Demo Striped";
+    src: url('../../../tipografia/ExodusDemo-Striped.otf');
+}
+
 .items{
     background-color: black;
     color: #F4576C;
     font-family: "Exodus Demo Striped";
-    src: url(../../../tipografia/ExodusDemo-Striped.otf);
     font-size: 30px;
 }
