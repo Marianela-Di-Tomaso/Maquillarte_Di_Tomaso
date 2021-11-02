@@ -10,3 +10,8 @@
     font-size: 30px;
     padding-top: 90px;
 }
+
+.card-body{
+    background-color: #F4576C;
+    border: 0px;
+}
