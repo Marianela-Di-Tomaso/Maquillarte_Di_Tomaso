@@ -1,6 +1,6 @@
 import carrito from "../../imagenes/carrito.svg"; 
 import './NavBar.css';
-import CartWidget from './CartWidget/CartWidget';
+import CartWidget from '../CartWidget/CartWidget';
 
 const NavBar = () => {
     return (

@@ -1,4 +1,4 @@
-import logo1 from "../../../imagenes/logo1.png";
+import logo1 from "../../imagenes/logo1.png";
 import './CartWidget.css';
 
 function CartWidget() {

@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Exodus Demo Striped";
-    src: url('../../../tipografia/ExodusDemo-Striped.otf');
+    src: url('../../tipografia/ExodusDemo-Striped.otf');
 }
 
 .items{
@@ -8,4 +8,5 @@
     color: #F4576C;
     font-family: "Exodus Demo Striped";
     font-size: 30px;
+    padding-top: 90px;
 }
