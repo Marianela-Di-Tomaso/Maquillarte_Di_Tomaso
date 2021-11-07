@@ -2,11 +2,11 @@ import React from 'react'
 import { Item } from './Item'
 
 
-const ItemList = (products) => {
+const ItemList = ({products}) => {
     return (
         <>
         {
-     products.map (prod =>  <Item prod = {prod}/>)}
+     products.map (prod => <Item prod = {prod}/>)}
            
             
         </>
