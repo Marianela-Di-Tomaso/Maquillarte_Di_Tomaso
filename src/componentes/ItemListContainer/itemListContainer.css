@@ -15,3 +15,12 @@
     background-color: #F4576C;
     border: 0px;
 }
+
+.contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card{
+    margin: 20px;
+}
