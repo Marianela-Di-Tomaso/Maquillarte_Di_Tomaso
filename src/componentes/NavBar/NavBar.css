@@ -7,8 +7,12 @@
 }
 
 .nav_items--boxYFlex{margin: 6px;
+    
 }
 
+a{
+    text-decoration: none;
+}
 /* Logo de la barra de navegacion */
 .nav__logo--boxYFlex{margin-left: 2px;}
 
@@ -18,6 +22,7 @@ ul li{
     padding: 8px;
     margin: 4px;
 }
+
 
 
 

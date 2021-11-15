@@ -1,24 +1,30 @@
 import {useState, useEffect} from 'react'
 import ItemDetail from './ItemDetail'
+
+import {useParams} from 'react-router-dom';
 import { llamado } from '../../Services/Llamado'
 
-const ItemDetailContainer = () => {
+export const ItemDetailContainer = () => {
     
-    const [prod, setProd] = useState({})
+    const [producto, setProducto] = useState({})
+
+    const {productoID} = useParams()
 
     useEffect(() => {
-        llamado
-        .then( res => {setProd(res)})    
-        .catch(err => console.log(err))
-        .finally(()=> console.log(false))       
-    },[]) 
+            llamado
+            .then( res => 
+                setProducto(res.find (producto => producto.id === parseInt(productoID))))    
+            .catch(err => console.log(err))
+            .finally(()=> console.log(false))   
       
-    console.log(prod);
+    },[productoID]) 
+      
+    console.log(productoID);
 
     return (
         <>
             <div>
-                <ItemDetail producto={prod[0]} />
+                <ItemDetail producto={producto} />
             </div>
         </>
     )

@@ -1,10 +1,11 @@
 import React from "react";
+import ItemCount from '../itemCount/ItemCount';
 
 
 const ItemDetail = ({producto}) => {
     return (
         <div>
-            <h2>Soy el producto </h2>
+            
              <div className='card w-50'>
                         <div className="container">
                             <label>{producto.nombre}</label>
@@ -17,6 +18,7 @@ const ItemDetail = ({producto}) => {
                         <div className="container">
                             <label>{producto.precio}</label>
                         </div>
+                        <ItemCount initial = {0} stock = {7} />
                     </div>
         </div>
     )
