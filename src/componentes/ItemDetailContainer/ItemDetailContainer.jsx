@@ -1,6 +1,5 @@
 import {useState, useEffect} from 'react'
 import ItemDetail from './ItemDetail'
-
 import {useParams} from 'react-router-dom';
 import { llamado } from '../../Services/Llamado'
 
