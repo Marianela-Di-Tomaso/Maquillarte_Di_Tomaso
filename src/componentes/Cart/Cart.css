@@ -1,3 +1,50 @@
 .tituloCarro{
     color: rgb(255, 255, 255);
 }
+
+.cartTitle {
+    color: white;
+}
+
+.cartContent {
+    background-color: antiquewhite;
+    width: 60%;
+    
+}
+
+.prodName {
+    font-size: 20px;
+    
+}
+
+.fotoCart {
+    width: 20%;
+}
+
+.btnTrash {
+    color: white;
+    font-size: 25px;
+
+}
+
+.btnTrash:hover {
+    color: rgb(233, 167, 27);
+}
+
+.headerTable {
+    background-color: black;
+    color: white;
+}
+
+.gifWaiting {
+    width: 30%;
+}
+/* 
+.totalCount {
+    width: 200%;
+} */
+
+.totalCountContainer {
+    background-color: black;
+    color: white;
+}

@@ -11,8 +11,6 @@ const ItemDetail = ({producto}) => {
         setClick(true);
     }
 
-
-
     return (
         <div>
             
