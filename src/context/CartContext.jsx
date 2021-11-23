@@ -1,7 +1,7 @@
 import {createContext, useState, useContext} from 'react'
 
 
-const CartContext = createContext([])
+export const CartContext = createContext([])
 
 export const useCartContext = () => {
     return useContext(CartContext) 
@@ -10,7 +10,6 @@ export const useCartContext = () => {
 
 export const CartContextProvider = ({children}) => {
   const [CartList, setCartList] = useState([]);
-  // const [cartTotal, setCartTotal] = useState()
  
 
   const agregarCarrito = (item) => {
@@ -35,7 +34,7 @@ export const CartContextProvider = ({children}) => {
       const cartTotal = CartList.reduce ((total,item)=> total + item.subtotal, 0)
       console.log (cartTotal)
   
-  const borrarCarrito = () => {
+/*   const borrarCarrito = () => {
     setCartList([]);
   };
 
@@ -45,7 +44,7 @@ export const CartContextProvider = ({children}) => {
 
   const borrarItem = (id) => {
     setCartList(CartList.filter((i) => i.id !== id));
-  };
+  }; */
 
   
 
@@ -55,10 +54,10 @@ export const CartContextProvider = ({children}) => {
         value={{
           CartList,
           agregarCarrito,
-          borrarCarrito,
+         /*  borrarCarrito,
           cantidadItem,
           borrarItem,
-          cartTotal
+          cartTotal */
     
         }}
       >
