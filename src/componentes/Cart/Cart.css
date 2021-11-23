@@ -48,3 +48,9 @@
     background-color: black;
     color: white;
 }
+
+td{
+    width: 200px;
+    height: 80px;
+    text-align: center;
+}
