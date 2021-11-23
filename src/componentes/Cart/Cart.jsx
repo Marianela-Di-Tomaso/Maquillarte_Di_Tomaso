@@ -7,7 +7,7 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 
 export const Cart = () => {
 
-    const { CartList, borrarCarrito, borrarItem} = useCartContext ()
+    const { CartList, borrarCarrito, borrarItem , cartTotal} = useCartContext ()
     console.log (CartList)
     return (
         
@@ -27,13 +27,15 @@ export const Cart = () => {
         <div className='cartContent container'>
             <table>
                 <tr className='headerTable'>
-                    <td></td>
+                    
                     <td>Nombre</td>
                     <td>Cantidad</td>
                     <td className='pl-5 pr-5'>Precio</td>
                     <td>Subtotal</td>
+                    <td>PRECIO FINAL</td>
                     <td>Borrar item</td>
                     <td className='pr-5'>Borrar Carrito<a className='btnTrash'> <FontAwesomeIcon icon={faTrashAlt} onClick={borrarCarrito} /></a></td>
+                    
                 </tr>
                     {CartList.map(prod => 
                     <tr className=''
@@ -44,8 +46,12 @@ export const Cart = () => {
                       <td> $ {prod.subtotal} </td>
                        <td> <a> <FontAwesomeIcon icon={faTrashAlt} onClick={() => { borrarItem(prod.id) } } /></a></td>
                     </tr>
+                    
+                    
                     )}
+                    
             </table>
+            <h2>El total de tu compra es de {cartTotal}</h2>
                 </div>
                 </>
         }
