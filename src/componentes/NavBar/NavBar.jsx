@@ -3,8 +3,10 @@ import './NavBar.css';
 import CartWidget from '../CartWidget/CartWidget';
 
 import {NavLink} from 'react-router-dom';
+import { useCartContext } from "../../context/CartContext";
 
 const NavBar = () => {
+  const {cantidadItem} = useCartContext()
     return (
         <div>
             <div className="container-fluid">
@@ -35,6 +37,8 @@ const NavBar = () => {
                         </NavLink>
                         
                         <NavLink to = '/carrito' >
+                          {cantidadItem() !== 0 && cantidadItem()}
+
                         <li className="nav-item">
                        <img src={carrito}/>
                         </li> 

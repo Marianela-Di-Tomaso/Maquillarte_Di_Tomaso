@@ -1,8 +1,9 @@
 import {useState , useEffect} from 'react'
 import { llamado } from '../../Services/Llamado';
 import ItemList from './ItemList.jsx';
-import './ItemListContainer.css';
+import './itemListContainer.css';
 import {useParams} from 'react-router-dom';
+import { getFirestore } from '../../Services/getFirestore';
 
 
 
@@ -13,7 +14,18 @@ function ItemListContainer() {
     const {categoriaID} = useParams()
 
     useEffect(() => {
-        if(categoriaID){
+     const db = getFirestore()
+
+     const dbQuery = categoriaID ? db.collection('items').where ('categoria' , '==' , categoriaID) : db.collection('items')
+
+     
+        dbQuery.get()
+        .then(data => setProducts (data.docs.map( pro => ({id: pro.id , ...pro.data()}))))
+        .catch(err => console.log (err))
+        .finally(() => setCargando(false))
+
+     
+      /*   if(categoriaID){
             
         llamado
         .then (res => {
@@ -30,11 +42,9 @@ function ItemListContainer() {
             .catch( err => console.log(err))
             .finally(() => setCargando(false))
 
-        }       
+        }   */     
     }, [categoriaID])
 
-
-    console.log (products)
 
     return (
         <div className="contenedor container-fluid">

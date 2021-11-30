@@ -32,7 +32,7 @@ export const Cart = () => {
                     <td>Cantidad</td>
                     <td className='pl-5 pr-5'>Precio</td>
                     <td>Subtotal</td>
-                    <td>PRECIO FINAL</td>
+                   
                     <td>Borrar item</td>
                     <td className='pr-5'>Borrar Carrito<a className='btnTrash'> <FontAwesomeIcon icon={faTrashAlt} onClick={borrarCarrito} /></a></td>
                     
