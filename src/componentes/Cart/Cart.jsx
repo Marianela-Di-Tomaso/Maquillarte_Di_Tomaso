@@ -9,6 +9,29 @@ export const Cart = () => {
 
     const { CartList, borrarCarrito, borrarItem , cartTotal} = useCartContext ()
     console.log (CartList)
+
+
+    const generarOrden = (e) =>{
+        
+        e.preventDefault()        
+        const orden = {}
+
+        /* orden.date = firebase.firestore.Timestamp.fromDate(new Date());     */
+
+        orden.buyer = {nombre: 'Maru', email:'m@gmail.com', tel: '1130548374'}
+        orden.total =  cartTotal()
+
+        orden.items = CartList.map(cartItem => {
+            const id = cartItem.id
+            const nombre = cartItem.nombre
+            const precio = cartItem.precio * cartItem.cantidad
+
+            return {id, nombre, precio}   
+        })
+        
+        }
+        console.log(generarOrden)
+
     return (
         
         <div>
@@ -51,11 +74,25 @@ export const Cart = () => {
                     )}
                     
             </table>
-            <h2>El total de tu compra es de {cartTotal}</h2>
+            <h2>El total de tu compra es de ${cartTotal()}</h2>
                 </div>
                 </>
         }
+
+              <form 
+                onSubmit={generarOrden} 
+                // onChange={handleChange} 
+            >
+                {/* <input type='text' name='name' placeholder='name' value={formData.name}/>
+                <input type='text' name='phone'placeholder='tel' value={formData.phone}/>
+                <input type='email' name='email'placeholder='email' value={formData.email}/> */}
+                <button>Enviar</button>
+            </form>
+
      
         </div>
-    )
+        
+        
+        )
+        
 }

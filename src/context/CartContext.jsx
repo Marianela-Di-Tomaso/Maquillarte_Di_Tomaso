@@ -30,8 +30,8 @@ export const CartContextProvider = ({children}) => {
     }
   };
   
-      const cartTotal = CartList.reduce ((total,item)=> total + item.subtotal, 0)
-      console.log (cartTotal)
+      const cartTotal = () => { return CartList.reduce ((total,item)=> total + item.subtotal, 0)}
+      
   
  const borrarCarrito = () => {
     setCartList([]);

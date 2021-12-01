@@ -14,7 +14,7 @@ export const ItemDetailContainer = () => {
         const db1 = getFirestore()
         db1.collection('items').doc(productoID).get()
         .then(res => {
-            setProducto({id: res.productoID, ...res.data()})
+            setProducto({id: res.id, ...res.data()})
         })
         .catch(err => console.log (err))
         .finally(() => setCargando(false))
@@ -26,7 +26,7 @@ export const ItemDetailContainer = () => {
       
     },[]) 
       
-    console.log(productoID);
+   
 
     return (
         <>
