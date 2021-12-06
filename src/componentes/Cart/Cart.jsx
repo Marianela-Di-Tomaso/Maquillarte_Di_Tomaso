@@ -4,11 +4,24 @@ import {Link} from 'react-router-dom'
 import './Cart.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+import {getFirestore} from '../../Services/getFirestore'
+import firebase from "firebase"
+import {useState} from 'react'
+import Modal from '../Modal/Modal'
+import { Button } from "react-bootstrap";
 
 export const Cart = () => {
 
+    const [showModal, setShowModal] = useState(false);
+    
     const { CartList, borrarCarrito, borrarItem , cartTotal} = useCartContext ()
     console.log (CartList)
+
+   /*  const [formData, setFormData] = useState({
+        nombre:'',
+        tel:'',
+        email: ''
+    })
 
 
     const generarOrden = (e) =>{
@@ -16,7 +29,7 @@ export const Cart = () => {
         e.preventDefault()        
         const orden = {}
 
-        /* orden.date = firebase.firestore.Timestamp.fromDate(new Date());     */
+        orden.date = firebase.firestore.Timestamp.fromDate(new Date());     
 
         orden.buyer = {nombre: 'Maru', email:'m@gmail.com', tel: '1130548374'}
         orden.total =  cartTotal()
@@ -28,9 +41,48 @@ export const Cart = () => {
 
             return {id, nombre, precio}   
         })
+
+        const dbQuery = getFirestore()
+        dbQuery.collection('orders').add(orden)
+        .then(resp =>console.log(resp))
+        .catch(err => console.log(err))
+
+
+        const itemsToUpdate = dbQuery.collection('items').where(
+            firebase.firestore.FieldPath.documentId() , 'in', CartList.map(i=> i.id)
+        )
+    
+        const batch = dbQuery.batch();
+
+           
+        itemsToUpdate.get()
+
+        .then( collection=>{
+            collection.docs.forEach(docSnapshot => {
+                batch.update(docSnapshot.ref, {
+                    stock: docSnapshot.data().stock - CartList.find(item => item.id === docSnapshot.id).cantidad
+                })
+            })
+    
+            batch.commit().then(res =>{
+                console.log('se actualizo')
+            })
+        })
+    
         
-        }
-        console.log(generarOrden)
+          console.log(orden)
+
+          
+    }
+    const handleChange=(e)=>{
+        setFormData({
+             ...formData, 
+             [e.target.name]: e.target.value
+         })
+     } */
+ 
+/* 
+        console.log(formData) */
 
     return (
         
@@ -79,15 +131,18 @@ export const Cart = () => {
                 </>
         }
 
-              <form 
+             {/*  <form 
                 onSubmit={generarOrden} 
-                // onChange={handleChange} 
+               onChange={handleChange} 
             >
-                {/* <input type='text' name='name' placeholder='name' value={formData.name}/>
-                <input type='text' name='phone'placeholder='tel' value={formData.phone}/>
-                <input type='email' name='email'placeholder='email' value={formData.email}/> */}
+                <input type='text' name='name' placeholder='name' value={formData.nombre}/>
+                <input type='text' name='phone'placeholder='tel' value={formData.tel}/>
+                <input type='email' name='email'placeholder='email' value={formData.email}/>
                 <button>Enviar</button>
-            </form>
+            </form> */}
+
+           <Button variant="outline-secondary" onClick={() => setShowModal(true)}>Generar orden de compra</Button>
+            <Modal show={showModal} onHide={() => setShowModal(false)}/> 
 
      
         </div>
