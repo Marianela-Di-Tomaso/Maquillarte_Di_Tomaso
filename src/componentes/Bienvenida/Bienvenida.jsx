@@ -12,7 +12,7 @@ function Bienvenida() {
                 <p> Y nosotrxs somos lxs <span>artistas</span></p>
 
                 <p className='somos'>Somos un grupo de DragQueens, creamos esta tienda de maquillaje, porque es nuestra herramienta cotidiana y queremos compartirla con el mundo. Todxs sabemos que “Te maquillas como si fueras a una batalla. Puedo llegar a estar incluso seis horas hasta conseguir el resultado”, Como mínimo, todxs necesitan al menos dos horas hasta lograrlo.</p>
-                <NavLink to = '/'>
+                <NavLink to = '/productos'>
             <button className='botonInicio'> CONOCE NUESTROS PRODUCTOS</button>
                  </NavLink>
 
