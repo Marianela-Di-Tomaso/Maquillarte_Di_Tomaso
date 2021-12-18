@@ -51,19 +51,19 @@ console.log('idOrden', idOrden);
                             value={name}
                             type="text"
                             onChange={(e) => setName(e.target.value)}
-                        />
+                        /> <br></br>
                         <label>Email:</label>
                         <input
                             value={email}
                             type="text"
                              onChange={(e) => setEmail(e.target.value)}
-                        />
+                        /><br></br>
                         <label>Telefono:</label>
                         <input
                             value={phone}
                             type="text"
                             onChange={(e) => setPhone(e.target.value)}
-                        />
+                        /> <br></br>
                         <button variant="outline-info" type="submit" className="mt-auto" >
                             Comprar
                          </button>
@@ -71,7 +71,7 @@ console.log('idOrden', idOrden);
                 </fieldset>
             </Modal.Body>
              <Modal.Footer>
-                <button variant="outline-info" type="submit" className="mt-auto" onClick={borrarCarrito}>
+                <button variant="outline-info" type="submit" className="mt-auto" onClick={borrarCarrito} >
                     Cancelar Compra
               </button>
             </Modal.Footer>

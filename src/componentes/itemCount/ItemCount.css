@@ -1,3 +1,9 @@
+.count{
+    width: 70%;
+    text-align: left;
+    padding: 20px;
+}
+
 label{
     background-color: white;
     color: rgb(0, 0, 0);
@@ -5,5 +11,24 @@ label{
 }
 .btn{
     color: white;
-    background-color: black;
+    background-color: #F4576C;
+}
+
+.btn2{
+    margin-top: 20px;
+    
+    background-color: #D3E57C;
+    border: 3px solid rgb(255, 255, 255);
+    padding: 9px;
+    font-size: 17px;
+    text-align: left;
+    letter-spacing: 0.4em;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    margin-bottom: 10px;
+}
+
+.btn2:hover{
+    background-color:  #8da020;
+    transition: 1s;
 }

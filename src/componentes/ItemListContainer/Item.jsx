@@ -9,9 +9,11 @@ export const Item = ({prod}) => {
         <img className= "img-fluid" src={prod.foto}/>
         <div className="card-body">
         <h5 className="card-title">{prod.nombre}</h5>
+        <hr></hr>
         <p className="card-text">{prod.descripcion}</p>
+        <p className='card-text2'>${prod.precio}</p>
         <Link to= {`/detalle/${prod.id}`}>
-        <button>Ver mas</button>
+        <button className='verMas'>VER MÁS DETALLES</button>
         </Link>
        
     </div>

@@ -4,8 +4,6 @@ import {Link} from 'react-router-dom'
 import './Cart.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
-import {getFirestore} from '../../Services/getFirestore'
-import firebase from "firebase"
 import {useState} from 'react'
 import Modal from '../Modal/Modal'
 import { Button } from "react-bootstrap";
@@ -66,7 +64,7 @@ export const Cart = () => {
     
             batch.commit().then(res =>{
                 console.log('se actualizo')
-            })
+       z     })
         })
     
         
@@ -90,7 +88,7 @@ export const Cart = () => {
         {CartList.length === 0 ?   <><h2 className='cartTitle mt-5 tituloCarro'>¡El carrito esta vacio!</h2>
        
         <div>
-            <Link to="/">
+            <Link to="/productos">
                 <button className="buttonCount mt-5">Seleccionar un producto</button>
             </Link>
             </div>

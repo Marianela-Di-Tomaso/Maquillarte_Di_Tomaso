@@ -3,11 +3,13 @@ import ItemCount from '../itemCount/ItemCount';
 import { useState , useContext} from 'react'
 import {Link} from 'react-router-dom';
 import { CartContext } from "../../context/CartContext";
+import './itemDetail.css'
+
 
 const ItemDetail = ({producto}) => {
     const [click , setClick] = useState (false)
 
-    const {CartList , agregarCarrito } = useContext(CartContext)
+    const { agregarCarrito } = useContext(CartContext)
  
     const handleAdd = (cantidad) => {
         console.log (cantidad)
@@ -18,19 +20,20 @@ const ItemDetail = ({producto}) => {
     return (
         <div>
             
-             <div className='card w-50'>
-                        <div className="container">
-                            <label>{producto.nombre}</label>
+             <div className="contenedorProducto" >
+
+                 <div className="col-lg-4 parte1">
+                     <h2 className="nombre"> {producto.nombre}</h2>
+                     <img  src={producto.fotoAmplia} className="fotoproducto" alt="foto" />
+                     
+                 </div>
+                    
+                        <div className="col-lg-8">
+                        <p className="descripcion1"> {producto.descripcionLarga}</p>
+                            <h3 className="precio">Precio : ${producto.precio}</h3>
+                            {click ? <Link to= '/carrito'><a className="ir">Ir al carrito</a></Link> : <ItemCount initial = {0} stock = {producto.stock} onAdd = {handleAdd}/>}
                         </div>
-                        <div className="container">
-                            <img  src={producto.foto} className="w-25" alt="foto" />
-                            <br/>
-                            <label>{producto.descripcion}</label>
-                        </div>
-                        <div className="container">
-                            <label>{producto.precio}</label>
-                        </div>
-                        {click ? <Link to= '/carrito'><a>Ir al carrito</a></Link> : <ItemCount initial = {0} stock = {7} onAdd = {handleAdd}/>}
+                      
                         
                     </div>
         </div>

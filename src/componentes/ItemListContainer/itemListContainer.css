@@ -12,7 +12,7 @@
 }
 
 .card-body{
-    background-color: #F4576C;
+    background-color: #D3E57C;
     border: 0px;
 }
 
@@ -23,4 +23,49 @@
 }
 .card{
     margin: 20px;
+}
+.card-title{
+    font-family: "Exodus Demo Regular";
+    font-size: 20px;
+    text-align: left;
+}
+
+hr:not([size]) {
+    height: 3px;
+    color: black;
+    background-color: black;
+}
+
+.card-text ,  .card-text2{
+    font-size: 17px;
+    color: black;
+    text-align: left;
+    letter-spacing: 0px;
+    font-weight: bold;
+    padding: 0px;
+    margin-bottom: 0px;
+}
+
+.card-text2{
+    margin-bottom: 0px;
+    font-size: 25px;
+    letter-spacing: 0.1em;
+    margin-bottom: 40px;
+}
+
+.verMas{
+    background-color: #D3E57C;
+    border: 3px solid black;
+    padding: 9px;
+    font-size: 17px;
+    text-align: left;
+    letter-spacing: 0.4em;
+    font-weight: bold;
+    margin-bottom: 10px;
+
+}
+
+.verMas:hover{
+    background-color:  #8da020;
+    transition: 1s;
 }

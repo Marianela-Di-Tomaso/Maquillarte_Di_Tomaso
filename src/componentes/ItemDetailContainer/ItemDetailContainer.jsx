@@ -17,12 +17,7 @@ export const ItemDetailContainer = () => {
             setProducto({id: res.id, ...res.data()})
         })
         .catch(err => console.log (err))
-        .finally(() => setCargando(false))
-           /*  llamado
-            .then( res => 
-                setProducto(res.find (producto => producto.id === parseInt(productoID))))    
-            .catch(err => console.log(err))
-            .finally(()=> setCargando(false))  */  
+        .finally(() => setCargando(false)) 
       
     },[]) 
       
@@ -30,7 +25,7 @@ export const ItemDetailContainer = () => {
 
     return (
         <>
-         <div className="contenedor container-fluid">
+         <div className="container-fluid">
             
             { cargando ? <h2 className="items"> Espera un momento, los productos se estan cargando ...</h2> :<ItemDetail producto={producto} />
         }

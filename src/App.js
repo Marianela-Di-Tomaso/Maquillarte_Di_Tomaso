@@ -5,6 +5,7 @@ import NavBar from './componentes/NavBar/NavBar';
 import {Cart} from './componentes/Cart/Cart';
 import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer'
 import {CartContextProvider} from './context/CartContext'
+import Bienvenida from './componentes/Bienvenida/Bienvenida'
 
 
 function App() {
@@ -18,6 +19,10 @@ function App() {
       <Switch >
       
       <Route exact path = '/'>
+        <Bienvenida/>
+      </Route>
+
+      <Route exact path = '/productos'>
         <ItemListContainer/>
       </Route>
       

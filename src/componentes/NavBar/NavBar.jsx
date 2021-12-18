@@ -21,9 +21,18 @@ const NavBar = () => {
                     </button>
                     <div className="collapse navbar-collapse nav__barraDeNavegacion--boxYFlex" id="navbarNav">
                       <ul className="navbar-nav">
+                        <NavLink to = "/">
                         <li className="nav-item active">
-                          <a className="nav-link nav__items--color nav__items--tipografia nav_items--boxYFlex nav__items--efecto" href="./index.html">nosotrxs</a>
+                          <a className="nav-link nav__items--color nav__items--tipografia nav_items--boxYFlex nav__items--efecto" >inicio</a>
                         </li>
+                        </NavLink>
+                        
+                        <NavLink to = "/productos">
+                        <li className="nav-item active">
+                          <a className="nav-link nav__items--color nav__items--tipografia nav_items--boxYFlex nav__items--efecto" >todos los productos</a>
+                        </li>
+                        </NavLink>
+                        
                         <NavLink to = "/categoria/pestaña" >
                         <li className="nav-item">
                           <a className="nav-link nav__items--color nav__items--tipografia nav_items--boxYFlex nav__items--efecto" >pestaña</a>
